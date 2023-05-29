@@ -14,17 +14,16 @@ function Home() {
 
   const { pokemon } = useSearchPokemon(search);
   console.log(pokemon)
-          
+
   return (
     <VStack id="home" h="100vh" gap={12}>
       <Image src={Pokemon} alt="pokemon logo" />
       <HStack
-        boxShadow="md"
-        px={6}
+      borderWidth={2}
+        px={{ base: 4, md: 6 }}
         borderRadius="md"
         maxW="container.md"
         w="full"
-        bgColor="gray.100"
       >
         <Input
           type="text"
@@ -32,9 +31,9 @@ function Home() {
           variant="unstyled"
           onChange={(e) => handleSearch(e)}
           autoFocus
-          fontSize='20px'
+          fontSize={{ base: 18, md: 20}}
           _placeholder={{ paddingLeft: 1 }}
-          lineHeight='54px'
+          lineHeight={{ base: '50px' , md: '54px' }} 
         />
         <Icon cursor="pointer" as={BsSearch} boxSize={5} />
       </HStack>
